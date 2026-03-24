@@ -59,7 +59,7 @@ export default function About() {
             {/* Image Placeholder */}
             <div className="aspect-[4/5] w-full max-w-md mx-auto bg-gray-200 rounded-2xl overflow-hidden relative shadow-xl">
               <img 
-                src="https://picsum.photos/seed/portrait/800/1000" 
+                src={personalInfo.profileImage} 
                 alt={personalInfo.name}
                 className="w-full h-full object-cover"
                 referrerPolicy="no-referrer"

@@ -32,7 +32,7 @@ export default function Projects() {
               {/* Image Placeholder */}
               <div className="aspect-[16/10] w-full bg-[#1e1e1e] relative overflow-hidden">
                 <img 
-                  src={`https://picsum.photos/seed/${project.id}/800/500`} 
+                  src={project.image} 
                   alt={project.title}
                   className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                   referrerPolicy="no-referrer"

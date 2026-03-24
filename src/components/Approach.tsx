@@ -53,8 +53,8 @@ export default function Approach() {
             className="w-full aspect-square bg-[#1e1e1e] rounded-3xl overflow-hidden relative"
           >
             <img 
-              src="https://picsum.photos/seed/workspace/800/800" 
-              alt="Workspace"
+              src="https://images.unsplash.com/photo-1581291518857-4e27b48ff24e?auto=format&fit=crop&w=800&q=80" 
+              alt="Web Design Workflow"
               className="w-full h-full object-cover"
               referrerPolicy="no-referrer"
             />
