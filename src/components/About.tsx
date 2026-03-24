@@ -62,7 +62,6 @@ export default function About() {
                 src={personalInfo.profileImage} 
                 alt={personalInfo.name}
                 className="w-full h-full object-cover"
-                referrerPolicy="no-referrer"
               />
               
               {/* Blocky white overlay pattern at bottom right */}
