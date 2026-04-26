@@ -1,8 +1,12 @@
 import { motion } from 'motion/react';
-import { personalInfo } from '../data';
+import { usePortfolio } from '../PortfolioContext';
 import { Briefcase } from 'lucide-react';
 
 export default function Navbar() {
+  const { personalInfo } = usePortfolio();
+
+  if (!personalInfo) return null;
+
   const firstName = personalInfo.name.split(' ')[0];
   const lastName = personalInfo.name.split(' ')[1];
 

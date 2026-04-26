@@ -1,8 +1,10 @@
 import { motion } from 'motion/react';
-import { projects, personalInfo } from '../data';
+import { usePortfolio } from '../PortfolioContext';
 import { ExternalLink, Github } from 'lucide-react';
 
 export default function Projects() {
+  const { projects, personalInfo } = usePortfolio();
+  
   return (
     <section id="projects" className="py-32 px-6 md:px-12 bg-background">
       <div className="max-w-7xl mx-auto">

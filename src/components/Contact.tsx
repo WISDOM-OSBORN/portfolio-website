@@ -1,8 +1,12 @@
 import { motion } from 'motion/react';
-import { personalInfo } from '../data';
+import { usePortfolio } from '../PortfolioContext';
 import { Mail, MessageCircle, ArrowUpRight } from 'lucide-react';
 
 export default function Contact() {
+  const { personalInfo } = usePortfolio();
+
+  if (!personalInfo) return null;
+
   return (
     <section id="contact" className="py-32 px-6 md:px-12 bg-background border-t border-white/5">
       <div className="max-w-4xl mx-auto text-center">
