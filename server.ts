@@ -59,18 +59,23 @@ async function initDB() {
       console.log('Seeded personal_info');
     }
 
-    // Check if projects is empty
-    const projectsRes = await sql`SELECT COUNT(*) FROM projects`;
-    if (parseInt(projectsRes[0].count) === 0) {
-      for (const p of projects) {
-        await sql`
-          INSERT INTO projects (id, title, type, description, link, image, tech, features)
-          VALUES (${p.id}, ${p.title}, ${p.type}, ${p.description}, ${p.link}, ${p.image},
-          ${JSON.stringify(p.tech)}, ${JSON.stringify(p.features)})
-        `;
-      }
-      console.log('Seeded projects');
+    // Upsert projects so that any new projects are added and existing ones are updated if we ever re-run
+    for (const p of projects) {
+      await sql`
+        INSERT INTO projects (id, title, type, description, link, image, tech, features)
+        VALUES (${p.id}, ${p.title}, ${p.type}, ${p.description}, ${p.link}, ${p.image},
+        ${JSON.stringify(p.tech)}, ${JSON.stringify(p.features)})
+        ON CONFLICT (id) DO UPDATE SET
+          title = EXCLUDED.title,
+          type = EXCLUDED.type,
+          description = EXCLUDED.description,
+          link = EXCLUDED.link,
+          image = EXCLUDED.image,
+          tech = EXCLUDED.tech,
+          features = EXCLUDED.features
+      `;
     }
+    console.log('Synced projects to database');
 
   } catch (err) {
     console.error('Failed to initialize database', err);
@@ -79,7 +84,6 @@ async function initDB() {
 
 async function startServer() {
   await initDB();
-
   const app = express();
   const PORT = process.env.PORT ? parseInt(process.env.PORT) : 3000;
 
@@ -114,6 +118,14 @@ async function startServer() {
         tech: row.tech,
         features: row.features
       }));
+
+      // Sort dynamically according to src/data.js array
+      const idOrder = projects.map(p => p.id);
+      pList.sort((a, b) => {
+        const idxA = idOrder.indexOf(a.id);
+        const idxB = idOrder.indexOf(b.id);
+        return (idxA !== -1 ? idxA : 99) - (idxB !== -1 ? idxB : 99);
+      });
 
       res.json({ personalInfo: pInfo, projects: pList });
     } catch (err) {
