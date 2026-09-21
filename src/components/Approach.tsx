@@ -19,22 +19,22 @@ const skillGroups = [
 const steps = [
   {
     number: "1",
-    title: "Start with the problem",
-    description: "Work out who will use it, what data is involved and what a good result looks like before building anything.",
+    title: "Define the problem",
+    description: "Work out who will use it and what a good result looks like before building anything.",
   },
   {
     number: "2",
-    title: "Build with AI coding tools",
-    description: "I use AI coding tools to move fast, and I decide the structure, the database and the features.",
+    title: "Structure the data",
+    description: "Decide what data is needed, how it is stored and how it is checked.",
   },
   {
     number: "3",
-    title: "Check the results",
-    description: "Test with real data, check the numbers, and look at how logins and personal data are handled.",
+    title: "Build the product",
+    description: "Build it in small steps, test it with real data and fix what breaks.",
   },
   {
     number: "4",
-    title: "Ship and maintain",
+    title: "Ship it",
     description: "Deploy it, watch for problems and keep improving it.",
   },
 ];
@@ -54,7 +54,7 @@ export default function Approach() {
             What I work with<br />and how I work
           </h2>
           <p className="text-muted text-lg leading-relaxed">
-            My work sits between biomedical research, data analysis and software. I build with AI coding tools, and I stay responsible for what gets built and whether it works.
+            My work sits between biomedical research, data analysis and software. I like taking a problem from a rough idea to something people can use.
           </p>
         </motion.div>
 

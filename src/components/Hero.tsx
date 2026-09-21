@@ -1,7 +1,10 @@
 import { motion } from 'motion/react';
-import { ArrowRight } from 'lucide-react';
+import { ArrowRight, FileText } from 'lucide-react';
+import { usePortfolio } from '../PortfolioContext';
 
 export default function Hero() {
+  const { personalInfo } = usePortfolio();
+
   return (
     <section className="relative min-h-screen flex flex-col items-center justify-center pt-32 pb-24 overflow-hidden px-6 md:px-12 bg-background">
       {/* Dotted pattern background on the left */}
@@ -29,7 +32,7 @@ export default function Hero() {
           transition={{ duration: 0.8, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
           className="text-5xl md:text-6xl lg:text-7xl font-bold tracking-tighter leading-[1.1] mb-8"
         >
-          Biomedical engineer building <span className="text-muted">AI and data tools</span>
+          I build <span className="text-muted">AI-powered tools</span> that turn data into answers.
         </motion.h1>
 
         <motion.p
@@ -38,7 +41,7 @@ export default function Hero() {
           transition={{ duration: 0.8, delay: 0.3 }}
           className="text-xl md:text-2xl text-foreground max-w-3xl mx-auto mb-4 leading-relaxed font-light"
         >
-          I train deep learning models on medical images, build data tools like DataCern, and ship web products with AI-assisted coding.
+          I’m a Biomedical Engineering graduate from the University of Ghana working at the intersection of AI, healthcare, data, and software.
         </motion.p>
 
         <motion.p
@@ -69,6 +72,17 @@ export default function Hero() {
           >
             Get in touch
           </a>
+          {personalInfo.cvUrl && (
+            <a
+              href={personalInfo.cvUrl}
+              target="_blank"
+              rel="noreferrer"
+              className="inline-flex items-center gap-2 px-6 py-3 bg-white/5 border border-white/10 text-muted hover:text-foreground rounded-full font-medium hover:bg-white/10 transition-all"
+            >
+              <FileText className="w-4 h-4" />
+              Download CV
+            </a>
+          )}
         </motion.div>
       </div>
     </section>

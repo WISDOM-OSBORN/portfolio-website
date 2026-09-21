@@ -1,6 +1,6 @@
 import { motion } from 'motion/react';
 import { usePortfolio } from '../PortfolioContext';
-import { Briefcase } from 'lucide-react';
+import { Briefcase, FileText } from 'lucide-react';
 
 export default function Navbar() {
   const { personalInfo } = usePortfolio();
@@ -32,12 +32,27 @@ export default function Navbar() {
         <a href="#contact" className="hover:text-accent transition-colors">Contact</a>
       </div>
 
-      <a 
-        href="#projects"
-        className="p-3 bg-surface hover:bg-surface-hover rounded-xl transition-colors"
-      >
-        <Briefcase className="w-5 h-5 text-muted" />
-      </a>
+      <div className="flex items-center gap-3">
+        {personalInfo.cvUrl && (
+          <a 
+            href={personalInfo.cvUrl}
+            target="_blank"
+            rel="noreferrer"
+            className="flex items-center gap-2 px-3.5 py-2 bg-surface hover:bg-surface-hover text-sm font-medium text-foreground rounded-xl transition-colors border border-white/5"
+            title="Download CV"
+          >
+            <FileText className="w-4 h-4 text-muted" />
+            <span className="hidden sm:inline">CV</span>
+          </a>
+        )}
+        <a 
+          href="#projects"
+          className="p-3 bg-surface hover:bg-surface-hover rounded-xl transition-colors"
+          title="View Projects"
+        >
+          <Briefcase className="w-5 h-5 text-muted" />
+        </a>
+      </div>
     </motion.nav>
   );
 }

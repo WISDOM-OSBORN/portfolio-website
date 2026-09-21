@@ -8,6 +8,7 @@ export interface PersonalInfo {
   linkedin: string;
   about: string;
   profileImage: string;
+  cvUrl?: string;
 }
 
 export interface Project {
@@ -31,8 +32,9 @@ export const personalInfo: PersonalInfo = {
   twitter: "https://x.com/wixzyyy",
   linkedin: "https://linkedin.com/in/wisdom-abuyah",
   about:
-    "I'm a biomedical engineering graduate from the University of Ghana. I build tools that turn data into answers: a deep learning model that identifies malaria species from blood smear images, and DataCern, an open-source app that turns a CSV file and a question into a report with charts. I'm also co-founder and CTO of Wifra Labs, a startup, where I build web products with AI coding tools and make the calls on what to build, how the data is organised and how it gets deployed.",
+    "From deep learning for malaria-species identification to DataCern, an open-source tool that transforms CSV files and questions into data reports, I build practical systems that make complex problems easier to solve. As a co-founder of Wifra Labs, I also take products from idea to deployment—defining the problem, structuring the data, building the product, and shipping it.",
   profileImage: "https://4lkqqgfjmsbokkj1.public.blob.vercel-storage.com/profile.jpg",
+  cvUrl: "https://4lkqqgfjmsbokkj1.public.blob.vercel-storage.com/Wisdom_Osborn_Abuyah_CV.pdf",
 };
 
 export const projects: Project[] = [
