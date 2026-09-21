@@ -1,20 +1,18 @@
-<div align="center">
-<img width="1200" height="475" alt="GHBanner" src="https://ai.google.dev/static/site-assets/images/share-ais-513315318.png" />
-</div>
+# Portfolio website
 
-# Run and deploy your AI Studio app
+Personal portfolio of Wisdom Osborn Abuyah: https://wisdomosbornportfolio.vercel.app/
 
-This contains everything you need to run your app locally.
+Built with React, TypeScript, Vite and Tailwind CSS. All content (bio and projects) lives in `src/data.ts`. There is no database or API, so to change the site, edit that file and redeploy.
 
-View your app in AI Studio: https://ai.studio/apps/b29ed1eb-8f06-41c9-99b3-37e0064e7511
+## Run locally
 
-## Run Locally
+```
+npm install
+npm run dev
+```
 
-**Prerequisites:**  Node.js
+## Build
 
-
-1. Install dependencies:
-   `npm install`
-2. Set the `GEMINI_API_KEY` in [.env.local](.env.local) to your Gemini API key
-3. Run the app:
-   `npm run dev`
+```
+npm run build
+```

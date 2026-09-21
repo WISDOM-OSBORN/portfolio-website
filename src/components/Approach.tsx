@@ -1,27 +1,42 @@
 import { motion } from 'motion/react';
-import { Phone } from 'lucide-react';
+import { Mail } from 'lucide-react';
+
+const skillGroups = [
+  {
+    title: "Health AI and research",
+    items: "TensorFlow, Keras, PyTorch, U-Net++, OpenCV, BLAST, MODELLER, PyMOL",
+  },
+  {
+    title: "Data and analysis",
+    items: "Python, Pandas, NumPy, Scikit-learn, R, SQL, Streamlit",
+  },
+  {
+    title: "Building products",
+    items: "Next.js, React, TypeScript, Node.js, PostgreSQL, Redis, Vercel, Cloudflare, and AI coding tools",
+  },
+];
 
 const steps = [
   {
     number: "1",
-    title: "Client Requirements Gathering",
-    description: "Understanding the clients needs and objectives to build a roadmap for the project."
+    title: "Start with the problem",
+    description: "Work out who will use it, what data is involved and what a good result looks like before building anything.",
   },
   {
     number: "2",
-    title: "Design and Development",
-    description: "Creating design mockups and developing the website, ensuring it meets the clients expectations."
+    title: "Build with AI coding tools",
+    description: "I use AI coding tools to move fast, and I decide the structure, the database and the features.",
   },
   {
     number: "3",
-    title: "Testing and Optimization",
-    description: "Thoroughly testing the website for bugs, performance, and responsiveness across devices."
+    title: "Check the results",
+    description: "Test with real data, check the numbers, and look at how logins and personal data are handled.",
   },
   {
     number: "4",
-    title: "Launch and Maintenance",
-    description: "Launching the website and providing ongoing support for any updates or maintenance."
-  }
+    title: "Ship and maintain",
+    description: "Deploy it, watch for problems and keep improving it.",
+  },
 ];
 
 export default function Approach() {
@@ -36,41 +51,42 @@ export default function Approach() {
           className="mb-16 max-w-3xl"
         >
           <h2 className="text-4xl md:text-5xl font-bold tracking-tight mb-6">
-            My Web Development<br />Approach
+            What I work with<br />and how I work
           </h2>
           <p className="text-muted text-lg leading-relaxed">
-            I follow a structured approach to delivering high-quality websites that cater to my clients' needs. From gathering requirements to product launch and ongoing maintenance, each step is essential to the success of the project.
+            My work sits between biomedical research, data analysis and software. I build with AI coding tools, and I stay responsible for what gets built and whether it works.
           </p>
         </motion.div>
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
-          {/* Image Placeholder */}
+          {/* Skills */}
           <motion.div
             initial={{ opacity: 0, scale: 0.95 }}
             whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true, margin: "-100px" }}
             transition={{ duration: 0.8 }}
-            className="w-full aspect-square bg-[#1e1e1e] rounded-3xl overflow-hidden relative"
+            className="w-full bg-[#1e1e1e] rounded-3xl p-8 md:p-10 space-y-8"
           >
-            <img 
-              src="https://images.unsplash.com/photo-1581291518857-4e27b48ff24e?auto=format&fit=crop&w=800&q=80" 
-              alt="Web Design Workflow"
-              className="w-full h-full object-cover"
-              referrerPolicy="no-referrer"
-            />
+            {skillGroups.map((group) => (
+              <div key={group.title}>
+                <h3 className="text-sm font-medium tracking-widest uppercase text-muted mb-3">
+                  {group.title}
+                </h3>
+                <p className="text-foreground leading-relaxed">{group.items}</p>
+              </div>
+            ))}
           </motion.div>
 
           {/* Steps */}
           <div className="relative">
-            <h3 className="text-sm font-medium tracking-widest uppercase text-muted mb-8">Steps</h3>
-            
+            <h3 className="text-sm font-medium tracking-widest uppercase text-muted mb-8">How I work</h3>
+
             <div className="space-y-12 relative">
-              {/* Vertical Line */}
               <div className="absolute left-4 top-2 bottom-2 w-px bg-white/10" />
 
               {steps.map((step, index) => (
-                <motion.div 
-                  key={index}
+                <motion.div
+                  key={step.number}
                   initial={{ opacity: 0, x: 20 }}
                   whileInView={{ opacity: 1, x: 0 }}
                   viewport={{ once: true, margin: "-100px" }}
@@ -81,9 +97,7 @@ export default function Approach() {
                     {step.number}
                   </div>
                   <h4 className="text-lg font-bold mb-2">{step.title}</h4>
-                  <p className="text-muted text-sm leading-relaxed">
-                    {step.description}
-                  </p>
+                  <p className="text-muted text-sm leading-relaxed">{step.description}</p>
                 </motion.div>
               ))}
             </div>
@@ -95,12 +109,12 @@ export default function Approach() {
               transition={{ duration: 0.8, delay: 0.5 }}
               className="mt-12 pl-12"
             >
-              <a 
+              <a
                 href="#contact"
                 className="inline-flex items-center gap-2 px-6 py-3 bg-white/10 hover:bg-white/20 text-foreground rounded-full text-sm font-medium transition-colors"
               >
-                <Phone className="w-4 h-4" />
-                Schedule a consultation
+                <Mail className="w-4 h-4" />
+                Get in touch
               </a>
             </motion.div>
           </div>

@@ -1,5 +1,8 @@
 {
   "name": "Wisdom Osborn Abuyah - Portfolio",
-  "description": "A modern, sleek portfolio website showcasing projects in Web3, Machine Learning, AI, and Full-Stack Development.",
-  "requestFramePermissions": []
+  "description": "Portfolio of a biomedical engineer working on AI, deep learning for medical imaging, data tools and web products.",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
 }

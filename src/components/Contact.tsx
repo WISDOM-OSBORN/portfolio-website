@@ -20,10 +20,10 @@ export default function Contact() {
             What's Next?
           </span>
           <h2 className="text-5xl md:text-7xl font-bold tracking-tighter mb-8">
-            Let's work together.
+            Let's talk.
           </h2>
           <p className="text-xl text-muted max-w-2xl mx-auto mb-12">
-            I'm currently open to new opportunities. Whether you have a question or just want to say hi, I'll try my best to get back to you!
+            I'm open to roles, research positions and collaborations in AI, data and health technology. Send me a message and I'll get back to you.
           </p>
 
           <div className="flex flex-col sm:flex-row items-center justify-center gap-6">

@@ -28,8 +28,8 @@ export default function Navbar() {
       
       <div className="hidden md:flex items-center gap-10 text-sm font-medium text-foreground">
         <a href="#about" className="hover:text-accent transition-colors">About Me</a>
-        <a href="#projects" className="hover:text-accent transition-colors">Jobs</a>
-        <a href="#contact" className="hover:text-accent transition-colors">Review</a>
+        <a href="#projects" className="hover:text-accent transition-colors">Projects</a>
+        <a href="#contact" className="hover:text-accent transition-colors">Contact</a>
       </div>
 
       <a 

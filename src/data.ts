@@ -1,119 +1,118 @@
-export const personalInfo = {
+export interface PersonalInfo {
+  name: string;
+  tagline: string;
+  email: string;
+  phone: string;
+  github: string;
+  twitter: string;
+  linkedin: string;
+  about: string;
+  profileImage: string;
+}
+
+export interface Project {
+  id: string;
+  title: string;
+  type: string;
+  description: string;
+  link: string;
+  repo?: string;
+  image?: string;
+  tech: string[];
+  features: string[];
+}
+
+export const personalInfo: PersonalInfo = {
   name: "Wisdom Osborn Abuyah",
-  tagline: "Web3 Learning & Building | ML & AI",
-  email: "abuyahwisdomosborn@gmail.com",
+  tagline: "Biomedical Engineer | AI, Data and Health Technology",
+  email: "abuyahwisdom@gmail.com",
   phone: "+233248939749",
   github: "https://github.com/WISDOM-OSBORN",
   twitter: "https://x.com/wixzyyy",
-  linkedin: "https://www.linkedin.com/in/wisdom-osborn-abuyah",
-  about: "I'm a Full-Stack Developer specializing in modern web development, Machine Learning, and AI. Passionate about building responsive, high-performance applications that merge sleek design with seamless functionality. Dedicated to delivering scalable, user-centric solutions that drive business success.",
-  profileImage: "https://4lkqqgfjmsbokkj1.public.blob.vercel-storage.com/profile.jpg"
+  linkedin: "https://linkedin.com/in/wisdom-abuyah",
+  about:
+    "I'm a biomedical engineering graduate from the University of Ghana. I build tools that turn data into answers: a deep learning model that identifies malaria species from blood smear images, and DataCern, an open-source app that turns a CSV file and a question into a report with charts. I'm also co-founder and CTO of Wifra Labs, a startup, where I build web products with AI coding tools and make the calls on what to build, how the data is organised and how it gets deployed.",
+  profileImage: "https://4lkqqgfjmsbokkj1.public.blob.vercel-storage.com/profile.jpg",
 };
 
-export const projects = [
+export const projects: Project[] = [
   {
-    id: "pennirent",
-    title: "PenniRent",
-    type: "Marketplace",
-    description: "A digital rental marketplace built to make renting properties, tools, and equipment simpler. Features PenniPal, an AI-powered assistant for natural-language search and intelligent recommendations.",
-    tech: ["React", "TypeScript", "AI", "Database Management"],
-    link: "https://pennirent.com/",
-    image: "https://4lkqqgfjmsbokkj1.public.blob.vercel-storage.com/pennirent.png",
+    id: "datacern",
+    title: "DataCern",
+    type: "Data tool | Open source",
+    description:
+      "Upload a CSV or PDF, ask a question in plain English, and get a written report with charts. Key figures such as totals and outliers are calculated in code, not written by the AI model. Reports export to Markdown, PDF or PowerPoint.",
+    tech: ["Python", "Streamlit", "LLM APIs"],
+    link: "https://datacern.streamlit.app/",
+    repo: "https://github.com/WISDOM-OSBORN/datacern",
     features: [
-      "Rental Marketplace",
-      "AI-powered Search (PenniPal)",
-      "Secure Auth",
-      "Verified Owners"
-    ]
-  },
-  {
-    id: "virtual-hub",
-    title: "Virtual Hub",
-    type: "AI Platform",
-    description: "AI-powered research, innovation & industry collaboration platform. Connects students, researchers, universities, industry partners, and innovators. Features AI-powered matching, project review, and verification.",
-    tech: ["AI", "RAG", "LLMs", "Vector Search", "Semantic Matching"],
-    link: "https://virtualhub.vercel.app/",
-    image: "https://4lkqqgfjmsbokkj1.public.blob.vercel-storage.com/virtualhub.png",
-    features: [
-      "AI-powered Matching",
-      "Research Verification",
-      "Industry Challenges",
-      "Admin Analytics"
-    ]
-  },
-  {
-    id: "john20-deals",
-    title: "John20 Deals",
-    type: "E-Commerce",
-    description: "Full-stack e-commerce platform for refurbished laptops, phones and gadgets in Accra, Ghana — with trade-ins, device repairs, and WhatsApp-powered checkout. Built with Supabase, Clerk, and Cloudflare R2.",
-    tech: ["React 19", "TypeScript", "Vite", "Tailwind CSS", "Supabase", "Clerk Auth", "Cloudflare R2"],
-    link: "https://john20deals.com/",
-    image: "https://4lkqqgfjmsbokkj1.public.blob.vercel-storage.com/john20deals.png",
-    features: [
-      "WhatsApp Checkout",
-      "Device Trade-ins",
-      "Repair Booking",
-      "Admin Analytics"
-    ]
-  },
-  {
-    id: "pennigadget",
-    title: "PenniGadget",
-    type: "E-Commerce Platform",
-    description: "A complete e-commerce platform featuring a full shopping flow, custom admin dashboard, real-time reviews, and dark mode support. Includes WhatsApp order integration and secure payments.",
-    tech: ["React 18", "TypeScript", "Vite", "Tailwind CSS", "Supabase", "PostgreSQL", "Recharts"],
-    link: "https://pennigadget.netlify.app/",
-    image: "https://4lkqqgfjmsbokkj1.public.blob.vercel-storage.com/pennigadget.PNG",
-    features: [
-      "Full E-Commerce Flow",
-      "Custom Admin Dashboard",
-      "Real-time Reviews",
-      "Dark Mode Support"
-    ]
+      "Numbers calculated in code",
+      "Data cleaning with preview",
+      "PDF and PowerPoint export",
+      "Open source (MIT)",
+    ],
   },
   {
     id: "malaria-classifier",
     title: "Malaria Species Classifier",
-    type: "Deep Learning / ML",
-    description: "A deep learning project that determines the specific species causing Malaria. Detects and classifies the various classes of the parasite using advanced computer vision models.",
-    tech: ["Python", "Flask", "Tailwind CSS", "Hugging Face"],
+    type: "Deep learning | Research",
+    description:
+      "Identifies the malaria parasite species (P. falciparum, P. ovale and P. malariae) from thin blood smear images. Built as my final year project; the paper is submitted to Computer Methods and Programs in Biomedicine.",
+    tech: ["Python", "TensorFlow", "U-Net++", "Hugging Face"],
     link: "https://huggingface.co/spaces/finalyearprojectonmalaria/Malaria_Species_classifier",
     image: "https://4lkqqgfjmsbokkj1.public.blob.vercel-storage.com/malaria-classifier.PNG",
     features: [
-      "Parasite Classification",
-      "Deep Learning Model",
-      "Interactive Web Interface",
-      "Hugging Face Deployment"
-    ]
+      "Segmentation with U-Net++",
+      "Classifies three species",
+      "Try it online",
+    ],
   },
   {
-    id: "lagoon-view",
-    title: "Lagoon View Hotel System",
-    type: "Full-Stack Booking Platform",
-    description: "A hotel booking and management platform with a public-facing booking system and a secure Admin Dashboard for staff to manage inventory and approve requests in real-time.",
-    tech: ["React", "TypeScript", "Tailwind CSS", "Supabase", "PostgreSQL"],
-    link: "https://lagoonview.netlify.app/",
-    image: "https://4lkqqgfjmsbokkj1.public.blob.vercel-storage.com/lagoon-view.PNG",
+    id: "pennirent",
+    title: "PenniRent",
+    type: "Startup product | Wifra Labs",
+    description:
+      "A rental marketplace for properties, tools and equipment. I lead the technical side as co-founder and CTO. It includes PenniPal, an assistant that takes search requests in plain language and protects users' personal information.",
+    tech: ["Next.js", "TypeScript", "PostgreSQL"],
+    link: "https://pennirent.com/",
+    image: "https://4lkqqgfjmsbokkj1.public.blob.vercel-storage.com/pennirent.png",
     features: [
-      "Public Booking System",
-      "Secure Admin Dashboard",
-      "Real-time Approvals",
-      "WhatsApp Integration"
-    ]
+      "Search and matching",
+      "AI assistant (PenniPal)",
+      "Payments",
+      "Verified owners",
+    ],
   },
   {
-    id: "be-the-light",
-    title: "Be the Light \u2013 Premium Boutique",
-    type: "Luxury E-Commerce & AI",
-    description: "A full-stack, luxury e-commerce platform tailored for a modern clothing boutique. Features an AI-Powered 'Maison Concierge' virtual personal shopper powered by Google Gemini AI, offering styling advice and product recommendations.",
-    tech: ["React 19", "TypeScript", "Tailwind CSS", "Supabase", "Google Gemini AI SDK"],
-    link: "https://bethelightcollection.netlify.app/#/",
-    image: "https://4lkqqgfjmsbokkj1.public.blob.vercel-storage.com/be-the-light.PNG",
+    id: "virtual-hub",
+    title: "Virtual Hub",
+    type: "Platform | University-industry collaboration",
+    description:
+      "A platform that connects researchers, students and industry partners. Industry posts challenges and the platform suggests matching research teams. It also handles proposal review, verification and an admin dashboard.",
+    tech: ["AI matching", "Vector search", "Admin analytics"],
+    link: "https://virtualhub.vercel.app/",
+    image: "https://4lkqqgfjmsbokkj1.public.blob.vercel-storage.com/virtualhub.png",
     features: [
-      "Dynamic Storefront & Lookbooks",
-      "AI-Powered 'Maison Concierge'",
-      "Secure Authentication",
-      "Admin Dashboard for Inventory"
-    ]
-  }
+      "Matching challenges to researchers",
+      "Proposal workflow",
+      "Research verification",
+      "Admin analytics",
+    ],
+  },
+  {
+    id: "john20-deals",
+    title: "John20 Deals",
+    type: "E-commerce",
+    description:
+      "An online shop for refurbished phones and laptops in Accra, with trade-ins, repair booking and WhatsApp checkout.",
+    tech: ["React", "TypeScript", "Supabase"],
+    link: "https://john20deals.com/",
+    image: "https://4lkqqgfjmsbokkj1.public.blob.vercel-storage.com/john20deals.png",
+    features: [
+      "WhatsApp checkout",
+      "Device trade-ins",
+      "Repair booking",
+      "Admin analytics",
+    ],
+  },
 ];
